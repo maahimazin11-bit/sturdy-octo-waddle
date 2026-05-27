@@ -31,7 +31,7 @@ export default function SpeciesDetail() {
       .then(text => setInfo(parseSpeciesResponse(text)))
       .catch(err => setError(err.message || 'Something went wrong. Please try again.'))
       .finally(() => setLoading(false))
-    fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(speciesData.common)}&client_id=yKWsNXjW2eD4zo-svroFAd8yT3dmvjqsRgI3L1Hfy2g&per_page=1`)
+    fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(speciesData.imageQuery || speciesData.common)}&client_id=yKWsNXjW2eD4zo-svroFAd8yT3dmvjqsRgI3L1Hfy2g&per_page=1`)
       .then(r => r.json())
       .then(data => setWikiImage(data?.results?.[0]?.urls?.regular ?? null))
       .catch(() => {})

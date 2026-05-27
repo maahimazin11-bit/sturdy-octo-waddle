@@ -21,16 +21,16 @@ export const categories = {
 
 export const species = {
   fish: [
-    { id: 'clownfish', common: 'Clownfish', scientific: 'Amphiprioninae', teaser: 'The reef\'s most famous resident, forever bound to its anemone.' },
+    { id: 'clownfish', common: 'Clownfish', scientific: 'Amphiprioninae', teaser: 'The reef\'s most famous resident, forever bound to its anemone.', imageQuery: 'clownfish anemone reef' },
     { id: 'blue-tang', common: 'Blue Tang', scientific: 'Paracanthurus hepatus', teaser: 'Vivid blue surgeonfish with a hidden scalpel at its tail.' },
     { id: 'lionfish', common: 'Lionfish', scientific: 'Pterois', teaser: 'Spectacular and venomous — a reef predator wrapped in warning colours.' },
-    { id: 'napoleon-wrasse', common: 'Napoleon Wrasse', scientific: 'Cheilinus undulatus', teaser: 'The gentle giant of coral reefs, ancient and unhurried.' },
+    { id: 'napoleon-wrasse', common: 'Napoleon Wrasse', scientific: 'Cheilinus undulatus', teaser: 'The gentle giant of coral reefs, ancient and unhurried.', imageQuery: 'humphead wrasse coral reef' },
     { id: 'bumphead-parrotfish', common: 'Bumphead Parrotfish', scientific: 'Bolbometopon muricatum', teaser: 'It literally eats coral and poops out white sand beaches.' },
-    { id: 'mandarin-fish', common: 'Mandarin Fish', scientific: 'Synchiropus splendidus', teaser: 'Possibly the most colourful vertebrate on Earth.' },
-    { id: 'seahorse', common: 'Seahorse', scientific: 'Hippocampus', teaser: 'The only animal where the male becomes pregnant.' },
-    { id: 'moorish-idol', common: 'Moorish Idol', scientific: 'Zanclus cornutus', teaser: 'An iconic reef fish that almost never survives in captivity.' },
+    { id: 'mandarin-fish', common: 'Mandarin Fish', scientific: 'Synchiropus splendidus', teaser: 'Possibly the most colourful vertebrate on Earth.', imageQuery: 'mandarin dragonet fish coral' },
+    { id: 'seahorse', common: 'Seahorse', scientific: 'Hippocampus', teaser: 'The only animal where the male becomes pregnant.', imageQuery: 'seahorse ocean marine' },
+    { id: 'moorish-idol', common: 'Moorish Idol', scientific: 'Zanclus cornutus', teaser: 'An iconic reef fish that almost never survives in captivity.', imageQuery: 'moorish idol fish reef' },
     { id: 'barracuda', common: 'Barracuda', scientific: 'Sphyraena', teaser: 'Torpedo-shaped apex predator, terrifying up close.' },
-    { id: 'trevally', common: 'Trevally', scientific: 'Caranx ignobilis', teaser: 'A powerful pack hunter that dominates open-water reefs.' },
+    { id: 'trevally', common: 'Trevally', scientific: 'Caranx ignobilis', teaser: 'A powerful pack hunter that dominates open-water reefs.', imageQuery: 'giant trevally fish ocean' },
   ],
   'sharks-rays': [
     { id: 'whale-shark', common: 'Whale Shark', scientific: 'Rhincodon typus', teaser: 'The ocean\'s largest fish — and it only eats tiny plankton.' },
@@ -51,12 +51,12 @@ export const species = {
     { id: 'indo-pacific-bottlenose-dolphin', common: 'Indo-Pacific Bottlenose Dolphin', scientific: 'Tursiops aduncus', teaser: 'Smarter than a dog, social as a human, and deeply misunderstood.' },
   ],
   reptiles: [
-    { id: 'green-sea-turtle', common: 'Green Sea Turtle', scientific: 'Chelonia mydas', teaser: 'Returns to the exact beach where it was born, decades later.' },
-    { id: 'hawksbill-sea-turtle', common: 'Hawksbill Sea Turtle', scientific: 'Eretmochelys imbricata', teaser: 'Eats sponges that would otherwise smother coral reefs.' },
-    { id: 'leatherback-sea-turtle', common: 'Leatherback Sea Turtle', scientific: 'Dermochelys coriacea', teaser: 'Dives deeper than most submarines and has no hard shell.' },
-    { id: 'olive-ridley-turtle', common: 'Olive Ridley Turtle', scientific: 'Lepidochelys olivacea', teaser: 'Thousands nest simultaneously in one of nature\'s great spectacles.' },
-    { id: 'banded-sea-krait', common: 'Banded Sea Krait', scientific: 'Laticauda colubrina', teaser: 'Venom ten times stronger than a cobra — yet remarkably docile.' },
-    { id: 'yellow-bellied-sea-snake', common: 'Yellow-bellied Sea Snake', scientific: 'Hydrophis platurus', teaser: 'The most widely distributed reptile on Earth, never needing to touch land.' },
+    { id: 'green-sea-turtle', common: 'Green Sea Turtle', scientific: 'Chelonia mydas', teaser: 'Returns to the exact beach where it was born, decades later.', imageQuery: 'green sea turtle underwater swimming' },
+    { id: 'hawksbill-sea-turtle', common: 'Hawksbill Sea Turtle', scientific: 'Eretmochelys imbricata', teaser: 'Eats sponges that would otherwise smother coral reefs.', imageQuery: 'hawksbill turtle underwater reef' },
+    { id: 'leatherback-sea-turtle', common: 'Leatherback Sea Turtle', scientific: 'Dermochelys coriacea', teaser: 'Dives deeper than most submarines and has no hard shell.', imageQuery: 'leatherback sea turtle adult ocean swimming' },
+    { id: 'olive-ridley-turtle', common: 'Olive Ridley Turtle', scientific: 'Lepidochelys olivacea', teaser: 'Thousands nest simultaneously in one of nature\'s great spectacles.', imageQuery: 'olive ridley turtle underwater' },
+    { id: 'banded-sea-krait', common: 'Banded Sea Krait', scientific: 'Laticauda colubrina', teaser: 'Venom ten times stronger than a cobra — yet remarkably docile.', imageQuery: 'sea krait snake ocean' },
+    { id: 'yellow-bellied-sea-snake', common: 'Yellow-bellied Sea Snake', scientific: 'Hydrophis platurus', teaser: 'The most widely distributed reptile on Earth, never needing to touch land.', imageQuery: 'sea snake underwater ocean' },
   ],
   invertebrates: [
     { id: 'crown-of-thorns-starfish', common: 'Crown of Thorns Starfish', scientific: 'Acanthaster planci', teaser: 'Beautiful predator that can single-handedly destroy a coral reef.' },
