@@ -19,16 +19,22 @@ export default function SpeciesDetail() {
   const [info, setInfo] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [wikiImage, setWikiImage] = useState(null)
 
   useEffect(() => {
     if (!speciesData) return
     setLoading(true)
     setError(null)
     setInfo(null)
+    setWikiImage(null)
     fetchSpeciesInfo(speciesData.common)
       .then(text => setInfo(parseSpeciesResponse(text)))
       .catch(err => setError(err.message || 'Something went wrong. Please try again.'))
       .finally(() => setLoading(false))
+    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(speciesData.common)}`)
+      .then(r => r.json())
+      .then(data => setWikiImage(data?.thumbnail?.source ?? null))
+      .catch(() => {})
   }, [id])
 
   function handleShare() {
@@ -86,6 +92,18 @@ export default function SpeciesDetail() {
         <p className="text-white/60 text-sm italic mt-1">{speciesData.scientific}</p>
         <p className="text-white/70 text-sm mt-3 leading-relaxed">{speciesData.teaser}</p>
       </div>
+
+      {/* Wikipedia image */}
+      {wikiImage && (
+        <div className="px-5 pt-5 max-w-sm mx-auto">
+          <img
+            src={wikiImage}
+            alt={speciesData.common}
+            className="w-full rounded-2xl object-cover shadow-sm"
+            style={{ maxHeight: '220px' }}
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div className="px-5 pt-6 pb-10 max-w-sm mx-auto">
