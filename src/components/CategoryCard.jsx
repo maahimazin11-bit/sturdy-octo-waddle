@@ -1,5 +1,18 @@
 import { useNavigate } from 'react-router-dom'
 
+const categoryColors = {
+  fish:              '#0891b2',
+  'sharks-rays':     '#1e3a5f',
+  'marine-mammals':  '#0d7377',
+  reptiles:          '#2d6a4f',
+  invertebrates:     '#e05c3a',
+  'coral-reef':      '#c9184a',
+  'deep-sea':        '#4a0e8f',
+  seagrass:          '#52b788',
+  mangroves:         '#1b4332',
+  algae:             '#40916c',
+}
+
 const icons = {
   fish: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
@@ -84,17 +97,23 @@ const icons = {
 
 export default function CategoryCard({ category, kingdom }) {
   const navigate = useNavigate()
+  const color = categoryColors[category.id] || '#0891b2'
+
   return (
     <button
       onClick={() => navigate(`/kingdom/${kingdom}/category/${category.id}`)}
-      className="bg-white rounded-2xl p-5 flex flex-col items-center gap-3 shadow-sm border border-gray-100 hover:shadow-md hover:border-turquoise/30 active:scale-95 transition-all text-center w-full"
+      style={{
+        background: `linear-gradient(145deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 55%), ${color}`,
+        boxShadow: `0 4px 16px ${color}55`,
+      }}
+      className="rounded-2xl p-5 flex flex-col items-start gap-3 active:scale-95 transition-all text-left w-full"
     >
-      <div className="text-turquoise">
+      <div className="text-white">
         {icons[category.icon] || icons.fish}
       </div>
       <div>
-        <p className="font-semibold text-oceannavy text-sm leading-tight">{category.name}</p>
-        <p className="text-xs text-gray-400 mt-1">{category.count} species</p>
+        <p className="font-semibold text-white text-sm leading-tight">{category.name}</p>
+        <p className="text-xs text-white/65 mt-1">{category.count} species</p>
       </div>
     </button>
   )

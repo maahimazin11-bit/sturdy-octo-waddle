@@ -5,15 +5,18 @@ import SearchBar from '../components/SearchBar'
 export default function Home() {
   const navigate = useNavigate()
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: 'linear-gradient(160deg, #0891b2 0%, #067093 40%, #0c5070 100%)' }}>
+    <div
+      className="min-h-screen flex flex-col"
+      style={{
+        background: 'radial-gradient(ellipse at 50% 0%, #38bdf8 0%, #0891b2 25%, #0e6d8c 50%, #0c4265 75%, #0c2340 100%)',
+      }}
+    >
       {/* Hero section */}
-      <div className="flex flex-col items-center pt-16 pb-10 px-6">
-        <div className="mb-2">
-          <OrcaLogo size={110} dark={false} />
-        </div>
-        <h1 className="text-4xl font-bold text-white tracking-tight mt-2">ORCA</h1>
+      <div className="flex flex-col items-center pt-14 pb-10 px-6">
+        <OrcaLogo size={130} dark={false} />
+        <h1 className="text-4xl font-bold text-white tracking-tight mt-3">ORCA</h1>
         <p className="text-white/80 text-sm mt-1 tracking-wide">Oceanic Reference Catalogue for Awareness</p>
-        <p className="text-white/60 text-xs mt-1">Your gateway to the ocean</p>
+        <p className="text-white/50 text-xs mt-1">Your gateway to the ocean</p>
 
         {/* Search */}
         <div className="w-full max-w-sm mt-8">
@@ -26,19 +29,17 @@ export default function Home() {
         <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4 text-center">Explore by Kingdom</p>
         <div className="flex flex-col gap-4 max-w-sm mx-auto">
           <KingdomCard
-            id="animal"
             title="Animal Kingdom"
             subtitle="Fish, sharks, mammals, reptiles, invertebrates & coral"
             emoji="🐠"
-            gradient="from-turquoise to-cyan-600"
+            gradient="from-cyan-500 to-blue-700"
             onClick={() => navigate('/kingdom/animal')}
           />
           <KingdomCard
-            id="plant"
             title="Plant Kingdom"
             subtitle="Seagrasses, mangroves, kelp & algae"
             emoji="🌿"
-            gradient="from-emerald-500 to-teal-600"
+            gradient="from-emerald-500 to-teal-700"
             onClick={() => navigate('/kingdom/plant')}
           />
         </div>
