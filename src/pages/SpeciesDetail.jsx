@@ -31,10 +31,14 @@ export default function SpeciesDetail() {
       .then(text => setInfo(parseSpeciesResponse(text)))
       .catch(err => setError(err.message || 'Something went wrong. Please try again.'))
       .finally(() => setLoading(false))
-    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(speciesData.common)}`)
+    const wikiTitle = speciesData.common.replace(/ /g, '_')
+    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${wikiTitle}`)
       .then(r => r.json())
-      .then(data => setWikiImage(data?.thumbnail?.source ?? null))
-      .catch(() => {})
+      .then(data => {
+        console.log('Wikipedia API response:', data)
+        setWikiImage(data?.thumbnail?.source ?? null)
+      })
+      .catch(err => console.log('Wikipedia fetch error:', err))
   }, [id])
 
   function handleShare() {
