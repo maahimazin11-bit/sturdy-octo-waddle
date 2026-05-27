@@ -69,7 +69,7 @@ export function parseSpeciesResponse(text) {
     }
     const contentStart = start + heading.length
     const end = nextHeading ? text.indexOf(nextHeading, contentStart) : text.length
-    result[key] = text.slice(contentStart, end === -1 ? text.length : end).trim()
+    result[key] = text.slice(contentStart, end === -1 ? text.length : end).trim().replace(/\*\*/g, '')
   }
   return result
 }

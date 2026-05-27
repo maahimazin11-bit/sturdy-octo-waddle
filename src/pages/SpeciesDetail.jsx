@@ -32,10 +32,12 @@ export default function SpeciesDetail() {
       .catch(err => setError(err.message || 'Something went wrong. Please try again.'))
       .finally(() => setLoading(false))
     const wikiTitle = speciesData.common.replace(/ /g, '_')
-    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${wikiTitle}`)
+    const wikiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${wikiTitle}`
+    console.log('Wikipedia fetch URL:', wikiUrl)
+    fetch(wikiUrl)
       .then(r => r.json())
       .then(data => {
-        console.log('Wikipedia API response:', data)
+        console.log('Wikipedia API full response:', JSON.stringify(data, null, 2))
         setWikiImage(data?.thumbnail?.source ?? null)
       })
       .catch(err => console.log('Wikipedia fetch error:', err))
